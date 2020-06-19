@@ -32,7 +32,7 @@
 		components.set(data.components);
 		selected.set(data.components[0]);
 
-		rebundle();
+		await rebundle();
 
 		await module_editor_ready;
 		await output_ready;
