@@ -180,7 +180,7 @@
 	let input;
 	let sourceErrorLoc;
 	let runtimeErrorLoc; // TODO refactor this stuff — runtimeErrorLoc is unused
-	let status = null;
+	let status = 'Loading...';
 
 	const bundler = is_browser && new Bundler({
 		workersUrl,
