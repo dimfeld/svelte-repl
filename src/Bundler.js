@@ -1,10 +1,12 @@
 const workers = new Map();
 
 let uid = 1;
+let bundlerUid = 1;
 
 export default class Bundler {
-	constructor({ workersUrl, packagesUrl, svelteUrl, onstatus }) {
-		const hash = `${packagesUrl}:${svelteUrl}`;
+	constructor({ workersUrl, packagesUrl, svelteUrl, id, onstatus }) {
+		id = id || bundlerUid++;
+		const hash = `${packagesUrl}:${svelteUrl}:${id}`;
 
 		if (!workers.has(hash)) {
 			const worker = new Worker(`${workersUrl}/bundler.js`);
