@@ -6,7 +6,7 @@ let bundlerUid = 1;
 export default class Bundler {
 	constructor({ workersUrl, packagesUrl, svelteUrl, id, onstatus }) {
 		id = id || bundlerUid++;
-		const hash = `${packagesUrl}:${svelteUrl}:${id}`;
+		const hash = this.hash = `${packagesUrl}:${svelteUrl}:${id}`;
 
 		if (!workers.has(hash)) {
 			const worker = new Worker(`${workersUrl}/bundler.js`);
@@ -50,5 +50,6 @@ export default class Bundler {
 
 	destroy() {
 		this.worker.terminate();
+		workers.delete(this.hash);
 	}
 }
