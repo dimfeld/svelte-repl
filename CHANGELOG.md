@@ -1,5 +1,13 @@
 # svelte-repl changelog
 
+## 0.2.0
+
+* Add code folding ([#116](https://github.com/sveltejs/svelte-repl/pull/116))
+
+## 0.1.20
+
+* Update embedded Rollup version for support for more language features ([#122](https://github.com/sveltejs/svelte-repl/issues/122))
+
 ## 0.1.19
 
 * Keep separate undo history in separate tabs ([#3](https://github.com/sveltejs/svelte-repl/issues/3))
